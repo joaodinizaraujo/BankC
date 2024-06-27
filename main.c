@@ -10,14 +10,16 @@ static int count_accs = 0;
 static int count_customers = 0;
 
 int main(){
+	printf("=============================\n");
+	printf("=========== BankC ===========\n");
+	printf("=============================\n\n");
+	
+	menu();
 	return 0;
 }
 
 void menu(){
 	int option = 0;
-	printf("=============================\n");
-	printf("=========== BankC ===========\n");
-	printf("=============================\n\n");
 	
 	printf("1- create account\n");
 	printf("2- withdraw\n");
@@ -25,13 +27,14 @@ void menu(){
 	printf("4- transfer\n");
 	printf("5- show accounts\n");
 	printf("6- exit\n");
+	printf("choose: ");
 	
 	scanf("%d", &option);
 	getchar();
 
 	switch(option){
 		case 1:
-			create_account();
+			create_account(accs, &count_accs, &count_customers);
 			Sleep(2);
 			menu();
 			break;

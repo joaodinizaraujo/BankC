@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "customer.h"
 
 void show_customer(customer customer){

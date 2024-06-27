@@ -8,7 +8,7 @@ typedef struct{
 	float total_balance;  // balance + limit
 } account;
 
-void create_account(int *count_customers);
+void create_account(account *accs, int *count_accs, int *count_customers);
 void withdraw(account acc, float value, account *accs, int count_accs);
 void deposit(account acc, float value, account *accs, int count_accs);
 void transfer(account origin, account destiny, float value, account *accs, int count_accs);
