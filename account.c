@@ -124,3 +124,9 @@ account find_account_by_number(account *accs, int count_accs, int number){
     }
     return acc;
 }
+
+void show_accounts(account *accs, int count_accs){
+    for(int i = 0; i < count_accs; i++){
+        show_account(accs[i]);
+    }
+}
