@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void create_account(){
+void create_account(int *count_customers){
     customer customer;
 
     char dia[3];
@@ -37,6 +37,23 @@ void create_account(){
     strcat(register_date, ano);
     strcat(register_date, "\0");
     strcpy(customer.register_date, register_date);
+    
+    printf(":\n");
+    customer.id = (*count_customers) + 1;
+
+    printf("Name: \n");
+    fgets(customer.name, 50, stdin);
+
+    printf("Email: \n");
+    fgets(customer.email, 50, stdin);
+
+    printf("CPF: \n");
+    fgets(customer.cpf, 20, stdin);
+    
+    printf("Birth date: \n");
+    fgets(customer.birth_date, 20, stdin);
+
+    (*count_customers)++;
 }
 
 void withdraw(account acc, float value, account *accs, int count_accs){
@@ -105,7 +122,7 @@ void transfer(account origin, account destiny, float value, account *accs, int c
 
 void show_account(account acc){
     printf("Number: %s\nCustomer: %s\nBirth date: %s\nRegister date: %s\nTotal balance: %.2f\n",
-    acc.number, strtok(acc.customer.name, "\n"), strtok(acc.customer.birth_date, "\n"), strtok(acc.customer.register_date), acc.total_balance);
+    acc.number, strtok(acc.customer.name, "\n"), strtok(acc.customer.birth_date, "\n"), strtok(acc.customer.register_date, "\n"), acc.total_balance);
 }
 
 float update_total_balance(account acc){
