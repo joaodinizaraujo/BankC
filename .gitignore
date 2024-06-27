@@ -1,3 +1,6 @@
 .settings/
 .cproject
 .project
+.vscode/
+main.exe
+output/
